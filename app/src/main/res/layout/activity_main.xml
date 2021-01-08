@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/mensagemTv"
+        android:id="@+id/messageTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -16,14 +16,14 @@
         android:text="@string/mensagemTv" />
 
     <Button
-        android:id="@+id/jogarBt"
+        android:id="@+id/playBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:text="Jogar" />
 
     <TextView
-        android:id="@+id/resultadoTv"
+        android:id="@+id/resultTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -33,6 +33,13 @@
     <ImageView
         android:id="@+id/dice1Iv"
         android:layout_width="match_parent"
+        android:layout_height="90dp"
+        />
+
+    <ImageView
+        android:id="@+id/dice2Iv"
+        android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="90dp"
         />
 
