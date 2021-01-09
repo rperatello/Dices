@@ -21,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     private final String SETTINGS = "SETTINGS";
     private final String DOUBLE_DICES = "DOUBLE_DICES";
+    private final String NUMBER_OF_FACES = "NUMBER_OF_FACES";
     public static final String EXTRA_SETTINGS = "EXTRA_SETTINGS";
     private final int SETTINGS_REQUEST_CODE = 0;
 
-    private Settings settings = new Settings(false);
+    private Settings settings = new Settings(false, 6);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +38,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean(DOUBLE_DICES, settings.getDoubleDices());
+        outState.putInt(NUMBER_OF_FACES, settings.getNumFaces());
 
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if (savedInstanceState.getBoolean(DOUBLE_DICES) && settings != null){
-            settings.setDoubleDices(savedInstanceState.getBoolean(DOUBLE_DICES));
-            findViewById(R.id.dice2Iv).setVisibility(View.VISIBLE);
+        if(settings != null){
+            settings.setNumFaces(savedInstanceState.getInt(NUMBER_OF_FACES));
+            if (savedInstanceState.getBoolean(DOUBLE_DICES)){
+                settings.setDoubleDices(savedInstanceState.getBoolean(DOUBLE_DICES));
+                findViewById(R.id.dice2Iv).setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -84,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         if(view == activityMainBinding.playBt){
-            Integer result1 = new Random(System.currentTimeMillis()).nextInt(6) + 1;
+            Integer result1 = new Random(System.currentTimeMillis()).nextInt(settings.getNumFaces()) + 1;
             Log.v(getString(R.string.app_name), "Dado 1: " + result1.toString());
             activityMainBinding.resultTv.setText(result1.toString());
 
@@ -94,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             );
 
             if(settings != null && settings.getDoubleDices()){
-                Integer result2 = new Random(System.currentTimeMillis()).nextInt(6) + 1;
+                Integer result2 = new Random(System.currentTimeMillis()).nextInt(settings.getNumFaces()) + 1;
                 Log.v(getString(R.string.app_name), "Dado 2: " + result2.toString());
                 activityMainBinding.resultTv.setText(activityMainBinding.resultTv.getText() + " " + result2.toString());
 

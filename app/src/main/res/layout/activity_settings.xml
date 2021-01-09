@@ -1,55 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
     tools:context=".SettingsActivity">
 
     <TextView
         android:id="@+id/textRG"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textRG"
         android:gravity="center_horizontal"
+        android:text="@string/textRG"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
     />
 
     <RadioGroup
         android:id="@+id/numOfDicesRG"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textRG">
+        android:orientation="horizontal"
+        >
 
-        <RadioButton
-            android:id="@+id/oneDiceRb"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/oneDice"
+            <RadioButton
+                android:id="@+id/oneDiceRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/oneDice" />
+
+            <RadioButton
+                android:id="@+id/twoDicesRb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/twoDices" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/facesTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/numFaces"
+        android:textSize="20dp"
         />
 
+    <RadioGroup
+        android:id="@+id/numOfFacesRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
         <RadioButton
-            android:id="@+id/twoDicesRb"
+            android:id="@+id/oneFaceRb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/twoDices"
-        />
+            android:text="@string/oneFace" />
+
+        <RadioButton
+            android:id="@+id/twoFacesRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/twoFaces" />
+
+        <RadioButton
+            android:id="@+id/threeFacesRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/threeFaces" />
+
+        <RadioButton
+            android:id="@+id/fourFacesRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fourFaces" />
+
+        <RadioButton
+            android:id="@+id/fiveFacesRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fiveFaces" />
+
+        <RadioButton
+            android:id="@+id/sixFacesRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sixFaces" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/salvarBt"
-        android:layout_width="0dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numOfDicesRG"
+        android:layout_gravity="right"
         android:onClick="onClick"
         android:text="@string/salvar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

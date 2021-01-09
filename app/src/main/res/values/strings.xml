@@ -2,8 +2,15 @@
     <string name="app_name">Dices</string>
     <string name="mensagemTv">Clique no botão abaixo para jogar o dado</string>
     <string name="resultado">Não lançado</string>
-    <string name="textRG">Selecione a quantidade de dados</string>
+    <string name="textRG">Selecione a quantidade de dados:</string>
     <string name="oneDice">1</string>
     <string name="twoDices">2</string>
     <string name="salvar">Salvar</string>
+    <string name="numFaces">Selecione a quantidade de faces:</string>
+    <string name="oneFace">1</string>
+    <string name="twoFaces">2</string>
+    <string name="threeFaces">3</string>
+    <string name="fourFaces">4</string>
+    <string name="fiveFaces">5</string>
+    <string name="sixFaces">6</string>
 </resources>
