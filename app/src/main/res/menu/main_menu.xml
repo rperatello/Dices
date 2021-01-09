@@ -7,4 +7,11 @@
         app:showAsAction="always"
         android:icon="@drawable/ic_settings"
     />
+
+    <item
+        android:id="@+id/sairMi"
+        android:title="@string/sair"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_sair"
+        />
 </menu>

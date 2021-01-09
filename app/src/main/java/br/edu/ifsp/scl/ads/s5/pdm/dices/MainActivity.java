@@ -96,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                 settingsIntent.putExtra(EXTRA_SETTINGS, settings);
                 startActivityForResult(settingsIntent, SETTINGS_REQUEST_CODE);
                 return true;
+            case R.id.sairMi:
+                finish();
+                return true;
             default:
                 return false;
         }
